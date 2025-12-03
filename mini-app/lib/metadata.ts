@@ -1,3 +1,3 @@
-export const title = "Snake & Ladder Elemental";
-export const description = "Play a classic snake and ladder game with elemental themes.";
+export const title = "Hanging Piñata Game";
+export const description = "Play a hanging piñata game where each spot contains money, danger zones, and prizes.";
 export const url = process.env.NEXT_PUBLIC_URL;
