@@ -8,15 +8,16 @@ const TOTAL_CELLS = BOARD_SIZE * BOARD_SIZE;
 
 // Each cell can be a money spot, danger zone, or prize
 const CELL_TYPES = [
-  { type: "money", value: 100, color: "bg-green-500" },
+  { type: "bitcoin", value: 0.5, color: "bg-yellow-500" },
+  { type: "ethereum", value: 1, color: "bg-indigo-500" },
   { type: "danger", value: -50, color: "bg-red-500" },
   { type: "prize", value: 200, color: "bg-blue-500" },
 ];
 
 function getCellType(index: number) {
-  // Simple deterministic pattern: every 5th cell is danger, every 7th is prize, rest are money
-  if ((index + 1) % 5 === 0) return CELL_TYPES[1];
-  if ((index + 1) % 7 === 0) return CELL_TYPES[2];
+  // Simple deterministic pattern: every 5th cell is danger, every 7th is prize, rest are bitcoin
+  if ((index + 1) % 5 === 0) return CELL_TYPES[2];
+  if ((index + 1) % 7 === 0) return CELL_TYPES[3];
   return CELL_TYPES[0];
 }
 
@@ -55,7 +56,8 @@ export function SnakeLadder() {
         {cellNumber}
         {cell.type === "danger" && <span className="text-sm">⚠️</span>}
         {cell.type === "prize" && <span className="text-sm">🏆</span>}
-        {cell.type === "money" && <span className="text-sm">💰</span>}
+        {cell.type === "bitcoin" && <span className="text-sm">💰</span>}
+        {cell.type === "ethereum" && <span className="text-sm">🪙</span>}
       </div>
     );
   };
