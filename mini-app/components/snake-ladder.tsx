@@ -8,10 +8,10 @@ const TOTAL_CELLS = BOARD_SIZE * BOARD_SIZE;
 
 // Each cell can be a money spot, danger zone, or prize
 const CELL_TYPES = [
-  { type: "bitcoin", value: 0.5, color: "bg-yellow-500" },
-  { type: "ethereum", value: 1, color: "bg-indigo-500" },
-  { type: "danger", value: -50, color: "bg-red-500" },
-  { type: "prize", value: 200, color: "bg-blue-500" },
+  { type: "fire", value: 0.5, color: "bg-red-500" },
+  { type: "water", value: 1, color: "bg-blue-500" },
+  { type: "earth", value: -50, color: "bg-green-500" },
+  { type: "air", value: 200, color: "bg-indigo-500" },
 ];
 
 function getCellType(index: number) {
@@ -54,10 +54,10 @@ export function SnakeLadder() {
         className={`flex items-center justify-center border h-12 w-12 text-xs ${cell.color} ${cellNumber === position ? "border-2 border-black" : ""}`}
       >
         {cellNumber}
-        {cell.type === "danger" && <span className="text-sm">⚠️</span>}
-        {cell.type === "prize" && <span className="text-sm">🏆</span>}
-        {cell.type === "bitcoin" && <span className="text-sm">💰</span>}
-        {cell.type === "ethereum" && <span className="text-sm">🪙</span>}
+        {cell.type === "earth" && <span className="text-sm">🌍</span>}
+        {cell.type === "air" && <span className="text-sm">🌬️</span>}
+        {cell.type === "fire" && <span className="text-sm">🔥</span>}
+        {cell.type === "water" && <span className="text-sm">🌊</span>}
       </div>
     );
   };
